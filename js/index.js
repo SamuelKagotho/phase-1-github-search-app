@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             userList.appendChild(li);
         });
 
-        // Attach click event to user links
+       
         document.querySelectorAll('.user-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function fetchUserRepos(username) {
-        reposList.textContent = ''; // Clear previous repos
+        reposList.textContent = ''; 
         const response = await fetch(`https://api.github.com/users/${username}/repos`);
         const repos = await response.json();
         displayRepos(repos);
